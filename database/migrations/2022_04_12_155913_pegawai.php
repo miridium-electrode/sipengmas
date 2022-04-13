@@ -21,6 +21,8 @@ class Pegawai extends Migration
             $table->string('gelar_blk', 50);
             $table->string('username', 255);
             $table->string('password', 255);
+            $table->rememberToken();
+            $table->timestamps();
             $table->foreignId('agama_id')->constrained('agama');
             $table->foreignId('jurusan_id')->constrained('jurusan');
             $table->foreignId('staff_id')->constrained('staff');
