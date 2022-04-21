@@ -14,9 +14,11 @@ class Partisipan extends Migration
     public function up()
     {
         Schema::create('partisipan', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_partisipan', 255);
+            $table->foreignId('id_pengmas')->constrained('pengmas');
+            $table->string('nip');
             $table->boolean('ketua');
+            $table->foreign('nip')->references('nip')
+            ->on('pegawai');
         });
     }
 

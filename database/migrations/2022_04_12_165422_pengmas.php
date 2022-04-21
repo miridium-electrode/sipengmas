@@ -19,7 +19,6 @@ class Pengmas extends Migration
             $table->string('judul', 255);
             $table->timestampTz('periode');
             $table->decimal('dana');
-            $table->foreignId('id_partisipan')->constrained('partisipan');
             $table->foreignId('id_prodi')->constrained('prodi');
         });
     }
