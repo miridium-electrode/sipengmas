@@ -16,8 +16,8 @@ class Pegawai extends Migration
         Schema::create('pegawai', function (Blueprint $table) {
             $table->string('nip', 50);
             $table->string('nama_lengkap', 255);
-            $table->string('prodi', 128);
             $table->primary('nip');
+            $table->foreignId('id_prodi')->constrained('prodi');
         });
     }
 

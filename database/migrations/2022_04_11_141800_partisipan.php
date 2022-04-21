@@ -27,6 +27,6 @@ class Partisipan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nama_partisipan');
+        Schema::dropIfExists('partisipan');
     }
 }
