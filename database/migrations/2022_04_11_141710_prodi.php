@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Agama extends Migration
+class Prodi extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class Agama extends Migration
      */
     public function up()
     {
-        Schema::create('agama', function (Blueprint $table) {
+        Schema::create('prodi', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 20);
+            $table->string('nama_prodi', 255);
         });
     }
 
@@ -26,6 +26,6 @@ class Agama extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agama');
+        Schema::dropIfExists('prodi');
     }
 }

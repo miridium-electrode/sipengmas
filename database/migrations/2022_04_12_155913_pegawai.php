@@ -14,18 +14,10 @@ class Pegawai extends Migration
     public function up()
     {
         Schema::create('pegawai', function (Blueprint $table) {
-            $table->id();
             $table->string('nip', 50);
-            $table->string('nama', 255);
-            $table->string('gelar_dpn', 7);
-            $table->string('gelar_blk', 50);
-            $table->string('username', 255);
-            $table->string('password', 255);
-            $table->rememberToken();
-            $table->timestamps();
-            $table->foreignId('agama_id')->constrained('agama');
-            $table->foreignId('jurusan_id')->constrained('jurusan');
-            $table->foreignId('staff_id')->constrained('staff');
+            $table->string('nama_lengkap', 255);
+            $table->string('prodi', 128);
+            $table->primary('nip');
         });
     }
 

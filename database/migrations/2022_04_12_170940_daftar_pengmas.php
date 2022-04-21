@@ -14,8 +14,13 @@ class DaftarPengmas extends Migration
     public function up()
     {
         Schema::create('daftar_pengmas', function (Blueprint $table) {
-            $table->foreignId('pegawai_id')->constrained('pegawai');
+            $table->string('nip');
             $table->foreignId('pengmas_id')->constrained('pengmas');
+
+            $table->foreign('nip')->references('nip')
+            ->on('pegawai')
+            ->cascadeOnUpdate()
+            ->restrictOnDelete();
         });
     }
 

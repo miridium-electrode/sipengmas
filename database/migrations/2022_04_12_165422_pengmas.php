@@ -15,12 +15,12 @@ class Pengmas extends Migration
     {
         Schema::create('pengmas', function (Blueprint $table) {
             $table->id();
+            $table->string('lampiran', 255)->nullable();
             $table->string('judul', 255);
-            $table->time('waktu');
-            $table->text('dokumentasi');
-            $table->string('nama_ketua', 255);
-            $table->timestampTz('deadline');
-            $table->foreignId('kategori_id')->constrained('kategori');
+            $table->timestampTz('periode');
+            $table->decimal('dana');
+            $table->foreignId('id_partisipan')->constrained('partisipan');
+            $table->foreignId('id_prodi')->constrained('prodi');
         });
     }
 
