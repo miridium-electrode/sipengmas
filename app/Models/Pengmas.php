@@ -2,10 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Pengmas extends Model
 {
-    use HasFactory;
+    public $timestamps = false;
+
+    public function getProdi() {
+        return DB::table('prodi')->get();
+    }
+
+    public function getPengmasTest() {
+        return DB::table('pengmas')->get();
+    }
 }
