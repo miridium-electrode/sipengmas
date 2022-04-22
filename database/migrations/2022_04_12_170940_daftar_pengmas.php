@@ -16,6 +16,7 @@ class DaftarPengmas extends Migration
         Schema::create('daftar_pengmas', function (Blueprint $table) {
             $table->string('nip');
             $table->foreignId('pengmas_id')->constrained('pengmas');
+            $table->boolean('ketua');
 
             $table->foreign('nip')->references('nip')
             ->on('pegawai')
