@@ -14,6 +14,10 @@ class Pengmas extends Model
         return $this->hasMany(Prodi::class);
     }
 
+    public function periode() {
+        return $this->hasMany(Periode::class);
+    }
+
     public function pegawai() {
         return $this
         ->belongsToMany(Pegawai::class, 'daftar_pengmas',
