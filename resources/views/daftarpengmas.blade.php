@@ -4,69 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>Daftar Pengmas</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        .bg {
-            margin: 0;
-            width: 100vw;
-            height: 100vh;
-            display: grid;
-            place-items: center;
-        }
-
-        .bg .container {
-            width: 85%;
-            height: 85%;
-            display: flex;
-            flex-direction: column
-        }
-
-        .container .search {
-            width: 100%;
-            padding: 2em;
-        }
-
-        .search input {
-            width: 100%;
-            padding: .5em;
-        }
-
-        .container .row2 {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .row2 .filter {
-            width: 30%;
-        }
-
-        .row2 .list-pengmas {
-            width: 70%;
-        }
-    </style>
 </head>
-<body>
-    <div class="bg">
-        <div class="container">
-            <div class="search">
-                <input type="search">
+<body class="m-0">
+    <x-topnav>
+        <input type="text" class="mx-2">
+        <a href="{{ url('/') }}" class="text-white px-2">Home</a>
+        <a href="{{ url('/pengmas') }}" class="text-white px-2">Pengmas</a>
+    </x-topnav>
+    <div class="p-4 flex">
+        <div class="p-2">
+            <div class="my-2">
+                <div class="text-2xl">Prodi</div>
+                <ul>
+                    @foreach ($prodi as $p)
+                        <li>{{ $p->nama_prodi }}</li>
+                    @endforeach
+                </ul>
             </div>
-            <div class="row2">
-                <div class="filter">
-                    filter
-                    <div>
-                        {{ $prodi }}
+            <div class="my-2">
+                <div class="text-2xl">
+                    Periode
+                </div>
+                <ul>
+                    @foreach ($pengmas as $p)
+                        <li>{{ $p->periode }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+        <div class="p-2">
+            <div>
+                @foreach ($pengmas as $p)
+                    <div class="flex">
+                        {{ $p->judul }}
+                        <select>
+                            @foreach ($p->pegawai as $pe)
+                                <option>{{ $pe->nama_lengkap }}</option>
+                            @endforeach
+                        </select>
                     </div>
-                </div>
-                <div class="list-pengmas">
-                    pengmas
-                    {{$pengmas->pegawai[0]->nama_lengkap}}
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
