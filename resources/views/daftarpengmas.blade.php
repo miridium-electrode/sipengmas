@@ -59,19 +59,12 @@
             <div class="row2">
                 <div class="filter">
                     filter
-                    @foreach ($prodi as $p)
-                        <div>
-                            {{ $p->nama_prodi }}
-                        </div>
-                    @endforeach
+                    <div>
+                        {{ $prodi }}
+                    </div>
                 </div>
                 <div class="list-pengmas">
                     pengmas
-                    @foreach ($pengmas as $p)
-                        <div>
-                            {{ $p->judul }}
-                        </div>
-                    @endforeach
                 </div>
             </div>
         </div>
