@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Periode;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +15,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $ps = New ProdiSeeder();
+        $pers = new PeriodeSeeder();
         $pes = new PegawaiSeeder();
         $pens = new PengmasSeeder();
         $dps = new DaftarPengmasSeeder();
 
         $ps->run();
+        $pers->run();
         $pes->run();
         $pens->run();
         $dps->run();
