@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class Pengmas extends Model
 {
+    protected $table = 'pengmas';
     public $timestamps = false;
 
     public function prodi() {

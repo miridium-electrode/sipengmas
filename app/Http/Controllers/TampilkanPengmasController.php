@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pengmas;
+use App\Models\Prodi;
 
 class TampilkanPengmasController extends Controller
 {
     public function index() {
-        $met = new Pengmas();
-        
+        $namaProdi = Prodi::find(1)->nama_prodi; 
+
         return view('daftarpengmas', [
-            'prodi' => $met->getProdi(),
-            'pengmas' => $met->getPengmasTest()
+            'prodi' => $namaProdi
         ]);
     }
 }
