@@ -28,8 +28,8 @@
                     Periode
                 </div>
                 <ul>
-                    @foreach ($pengmas as $p)
-                        <li>{{ $p->periode }}</li>
+                    @foreach ($periode as $p)
+                        <li>{{ $p->tahun }}</li>
                     @endforeach
                 </ul>
             </div>
