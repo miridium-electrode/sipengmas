@@ -9,11 +9,11 @@ class Pengmas extends Model
 {
     public $timestamps = false;
 
-    public function getProdi() {
-        return DB::table('prodi')->get();
+    public function prodi() {
+        return $this->hasMany(Prodi::class);
     }
 
-    public function getPengmasTest() {
-        return DB::table('pengmas')->get();
+    public function pegawai() {
+        return $this->belongsToMany(Pegawai::class, $relatedPivotKey = 'nip')->using(DaftarPengmas::class);
     }
 }
