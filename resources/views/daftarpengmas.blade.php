@@ -65,6 +65,7 @@
                 </div>
                 <div class="list-pengmas">
                     pengmas
+                    {{$pengmas->pegawai[0]->nama_lengkap}}
                 </div>
             </div>
         </div>

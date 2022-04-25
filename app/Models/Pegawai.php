@@ -13,6 +13,7 @@ class Pegawai extends Model
     public $timestamps = false;
 
     public function pengmas() {
-        return $this->belongsToMany(Pengmas::class)->using(DaftarPengmas::class);
+        return $this->belongsToMany(Pengmas::class, 'daftar_pengmas', 'nip')
+        ->withPivot(['ketua']);
     }
 }

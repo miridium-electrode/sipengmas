@@ -15,6 +15,9 @@ class Pengmas extends Model
     }
 
     public function pegawai() {
-        return $this->belongsToMany(Pegawai::class, $relatedPivotKey = 'nip')->using(DaftarPengmas::class);
+        return $this
+        ->belongsToMany(Pegawai::class, 'daftar_pengmas',
+         'pengmas_id', 'nip')
+         ->withPivot(['ketua']);
     }
 }
