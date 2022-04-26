@@ -21,6 +21,7 @@ class Pengmas extends Migration
             $table->decimal('dana');
             $table->foreignId('prodi_id')->constrained('prodi');
             $table->foreignId('jurusan_id')->constrained('jurusan');
+            $table->foreignId('periode_id')->constrained('periode');
         });
     }
 
