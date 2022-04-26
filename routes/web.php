@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
+use App\Http\Controllers\TampilkanPengmasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +19,4 @@ Route::get('/', function () {
     return Inertia::render('Welcome', []);
 });
 
+Route::get('/pengmas', [TampilkanPengmasController::class, 'index']);
