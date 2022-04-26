@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TampilkanPengmasController;
+use Inertia\Inertia;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,6 @@ use App\Http\Controllers\TampilkanPengmasController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('Welcome', []);
 });
 
-Route::get('/pengmas', [TampilkanPengmasController::class, 'index']);
