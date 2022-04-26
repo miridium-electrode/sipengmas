@@ -17,7 +17,6 @@ class Pengmas extends Migration
             $table->id();
             $table->string('lampiran', 255)->nullable();
             $table->string('judul', 255);
-            $table->string('periode', 6);
             $table->decimal('dana');
             $table->foreignId('prodi_id')->constrained('prodi');
             $table->foreignId('jurusan_id')->constrained('jurusan');
