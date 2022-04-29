@@ -29,6 +29,7 @@
     <!-- Page Wrapper -->
     @include('partials.topbar')
     <div id="wrapper">
+        @include('partials.filterdata')
         @yield('contain')
         <!-- Footer -->
         <footer class="sticky-footer bg-white">

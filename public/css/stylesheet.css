@@ -9,3 +9,13 @@
     background-position: right;
     background-size: cover;
 }
+
+.form-search {
+   width: 60%;
+}
+
+thead{
+    background-color: blue;
+    color: white;
+}
+
