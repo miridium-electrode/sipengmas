@@ -1,2 +1,2 @@
-// require('./bootstrap');
+// require('./axios');
 window.$ = require('jquery');
