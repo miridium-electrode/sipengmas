@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pegawai extends Model
 {
-    protected $table;
-    public $timestamps;
+    protected $table = 'pegawai';
+    public $timestamps = false;
     protected $primaryKey = 'nip';
     public $incrementing = false;
     protected $keyType = 'string';
