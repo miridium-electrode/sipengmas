@@ -2,17 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Jurusan;
+use App\Models\Periode;
+use App\Models\Prodi;
+use App\Models\Pegawai;
 use App\Models\Pengmas;
 
 class TampilkanPengmasController extends Controller
 {
     public function index() {
-        $met = new Pengmas();
-        
-        return view('daftarpengmas', [
-            'prodi' => $met->getProdi(),
-            'pengmas' => $met->getPengmasTest()
+        $jurusan = Jurusan::all();
+        $periode = Periode::all();
+        $prodi = Prodi::all();
+        $pengmas = Pengmas::with(['jurusan', 'periode', 
+        'prodi', 'ketua', 'anggota'])->get();
+
+        return view('data', [
+            'jurusan' => $jurusan,
+            'periode' => $periode,
+            'prodi' => $prodi,
+            'pengmas' => $pengmas,
         ]);
     }
 }
