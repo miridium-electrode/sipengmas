@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TampilkanPengmasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,22 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login', [
-        "title" => "Login"
-    ]);
+    return view('landingpage');
 });
-Route::get('/register', function () {
-    return view('register', [
-        "title" => "Register"
-    ]);
-});
-Route::get('/index', function () {
-    return view('index', [
-        "title" => "Homepage"
-    ]);
-});
-Route::get('/data', function () {
-    return view('data', [
-        "title" => "Data Pengmas"
-    ]);
-});
+
+Route::get('/data', [TampilkanPengmasController::class, 'index']);

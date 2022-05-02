@@ -1,5 +1,6 @@
-@extends('layouts.data')
-@section('contain')
+<!--
+{{-- @extends('layouts.data') --}}
+{{-- @section('contain') --}}
     <div class="container-fluid">
         <form class="form-group form-search m-auto mt-2">
         <div class="input-group">
@@ -41,4 +42,141 @@
     </div>
 
     </div>
-@endsection
+{{-- @endsection --}}
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Data Pengmas</title>
+  <link rel="stylesheet" href="{{ asset('css/bs.css') }}">
+  <style>
+    .filter-hide {
+      display: none
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-sm sticky-top bg-primary">
+      <div class="container-fluid">
+        <a href="#" class="navbar-brand text-white"><span class="text-secondary">SI</span><span>PENGMAS</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-nowrap text-white">Data Pengmas</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-nowrap text-white">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container-fluid">
+    <div class="row g-0">
+      <div id="filter" class="col-sm-3 m-3">
+        <div class="text-dark">
+          <h5>Filter Pengmas</h5>
+        </div>
+        <div class="text-dark ml-2">
+            <h6>Tahun</h6>
+        </div>
+        @foreach ($periode as $p)
+          <div class="form-check ml-5">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+            {{ $p->tahun }}
+            </label>
+          </div>          
+        @endforeach
+        <div class="text-dark ml-2 mt-2">
+            <h6>Prodi</h6>
+        </div>
+        @foreach ($prodi as $p)
+          <div class="form-check ml-5">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                {{ $p->nama_prodi }}
+            </label>
+          </div>
+        @endforeach
+        <div class="text-dark ml-2 mt-2">
+            <h6>Jurusan</h6>
+        </div>
+        @foreach ($jurusan as $j)
+          <div class="form-check ml-5">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                {{ $j->nama_jurusan }}
+            </label>
+          </div>
+        @endforeach
+      </div>
+      <div id="content" class="col-sm-8">
+        <div class="input-group mt-3 ml-2 mb-3">
+          <input type="text" class="form-control">
+          <button class="btn btn-outline-dark" type="button">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+        <button id="filter-toggle" class="btn btn-secondary">
+          <i class="bi bi-funnel-fill"></i>
+          <span>
+            Toggle Filter
+          </span>
+        </button>
+        <div class="table-responsive-sm">
+          <table class="table table-bordered m-auto mt-2">
+            <thead class="bg-primary text-white">
+              <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Judul</th>
+                <th scope="col">Ketua</th>
+                <th scope="col">Anggota</th>
+                <th scope="col">Periode</th>
+                <th scope="col">Dana</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach ($pengmas as $i => $p)
+                <tr>
+                  <th>{{ $i + 1 }}</th>
+                  <th>{{ $p->judul }}</th>
+                  <th>
+                    {{ $p->ketua()->first()->nama_lengkap }}
+                  </th>
+                  <th>
+                    <ul>
+                      @foreach ($p->anggota as $a)
+                        <li>{{ $a->nama_lengkap }}</li>
+                      @endforeach
+                    </ul>
+                  </th>
+                  <th>{{ $p->periode->tahun }}</th>
+                  <th>{{ $p->dana }}</th>
+                </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="{{ asset('js/app.js') }}"></script>
+<script>
+  $("#filter-toggle").click(function() {
+    $("#filter").toggleClass("filter-hide")
+  });
+</script>
+</html>
