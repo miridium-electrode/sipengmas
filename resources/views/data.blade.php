@@ -91,102 +91,36 @@
         <div class="text-dark ml-2">
             <h6>Tahun</h6>
         </div>
-        <div class="form-check ml-5">
+        @foreach ($periode as $p)
+          <div class="form-check ml-5">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
-            2022
+            {{ $p->tahun }}
             </label>
-        </div>
-        <div class="form-check ml-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-            2021
-            </label>
-        </div>
-        <div class="form-check ml-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-            2020
-            </label>
-        </div>
-        <div class="form-check ml-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-            2019
-            </label>
-        </div>
+          </div>          
+        @endforeach
         <div class="text-dark ml-2 mt-2">
             <h6>Prodi</h6>
         </div>
-        <div class="form-check ml-5">
+        @foreach ($prodi as $p)
+          <div class="form-check ml-5">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
-                D3
+                {{ $p->nama_prodi }}
             </label>
-        </div>
-        <div class="form-check ml-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                D4
-            </label>
-        </div>
+          </div>
+        @endforeach
         <div class="text-dark ml-2 mt-2">
             <h6>Jurusan</h6>
         </div>
-        <div class="form-check ml-5">
+        @foreach ($jurusan as $j)
+          <div class="form-check ml-5">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
-                Informatika
+                {{ $j->nama_jurusan }}
             </label>
-        </div>
-        <div class="form-check ml-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                Komputer
-            </label>
-        </div>
-        <div class="form-check ml-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                Elektronika
-            </label>
-        </div>
-        <div class="form-check ml-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                Elektro Industri
-            </label>
-        </div>
-        <div class="form-check ml-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                Telekomunikasi
-            </label>
-        </div>
-        <div class="form-check ml-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                Sis. Pembangkit Energi
-            </label>
-        </div>
-        <div class="form-check ml-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                Teknologi Game
-            </label>
-        </div>
-        <div class="form-check ml-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                Multimedia Broadcasting
-            </label>
-        </div>
-        <div class="form-check ml-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                Mekatronika
-            </label>
-        </div>
+          </div>
+        @endforeach
       </div>
       <div id="content" class="col-sm-8">
         <div class="input-group mt-3 ml-2 mb-3">
@@ -214,14 +148,24 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Lorem</td>
-                <td>Ipsum</td>
-                <td>Lorem</td>
-                <td>Ipsum</td>
-                <td>5000</td>
-              </tr>
+              @foreach ($pengmas as $i => $p)
+                <tr>
+                  <th>{{ $i + 1 }}</th>
+                  <th>{{ $p->judul }}</th>
+                  <th>
+                    {{ $p->ketua()->first()->nama_lengkap }}
+                  </th>
+                  <th>
+                    <ul>
+                      @foreach ($p->anggota as $a)
+                        <li>{{ $a->nama_lengkap }}</li>
+                      @endforeach
+                    </ul>
+                  </th>
+                  <th>{{ $p->periode->tahun }}</th>
+                  <th>{{ $p->dana }}</th>
+                </tr>
+              @endforeach
             </tbody>
           </table>
         </div>
