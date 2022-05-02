@@ -1,0 +1,178 @@
+#loading{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99999;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader-wrapper {
+    width: 60px;
+    height: 60px;
+}
+.loader {
+    box-sizing: border-box; 
+    width: 100%;
+    height: 100%; 
+    border: 5px solid #162534; 
+    border-top-color: #003899; 
+    border-bottom-color: #E5CD17;
+    border-radius: 50%; 
+    animation: rotate 5s linear infinite; 
+}
+.loader-inner{
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+    animation-duration: 2.5s;
+}
+@keyframes rotate {
+    0%{
+        transform: scale(1) rotate(360deg);
+    }
+    50%{
+        transform: scale(.8) rotate(-360deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+#carouselExampleCaptions {
+    width: 55%;
+    margin: auto;
+    padding-top: 2em;
+}
+.navbar{
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding-block: 15px;
+}
+.navbar a{
+    text-decoration: none;
+    color: inherit; /*Inherits the same color as the parent element or grandparent (the body) unless you set the color to the navbar.*/
+}
+.container1 {
+    background-color: #fff;
+}
+.logo{
+    margin-left: 120px;
+}
+.list{
+    list-style: none;
+    display: flex;
+    gap: 25px; 
+    margin-right: 120px;
+    padding-top: 10px;
+}
+.carousel {
+    padding-top: 4em;
+}
+#toggler,
+.navbar label{
+    display: none;/*Hide the checkbox and label on large screens.*/
+}
+/*Breakpoint set at 600px, once it is 600px or smaller the layout changes to use the following styles overriding the old ones.*/
+@media screen and 
+(max-width: 600px){
+    .menu{
+        width: 100%;
+        max-height: 0; /*Makes the max-height 0 to side the expanded menu.*/
+        overflow: hidden; /*Hides the overflowing content.*/
+    }
+    .list{
+        flex-direction: column; /*Chances the direction of the flex container. By default it is a row so we change it to column in small screens.*/
+        align-items: center;
+        padding: 20px;
+    }
+    .navbar label{
+        display: inline-flex; /*Makes it an inline flex container for the icon. Used for centering the icon inside this box.*/
+        align-items: center;
+        cursor: pointer;
+    }
+    /* 
+        The general sibling selector (~) selects all elements that are next siblings of #toggler.
+        In this case we target the .menu and we turn the height back to 100% to show the menu.
+    */
+    #toggler:checked ~ .menu{
+        max-height: 100%;
+    }
+}
+.siabdi {
+    padding-top: 4em;
+}
+.background {
+    background-color: #ffff
+    ;
+}
+.parallax {
+
+    height: 350px;
+    background-image: linear-gradient(rgba(10, 9, 9, 0.9),rgba(10, 9, 9, 0.5)),url("../images/home/home1.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+	font-size: 30px;
+	color: white;
+	padding-top:  50px;
+	margin-top: 2em;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+#map {
+    height: 300px;
+    width: 100%;
+    margin-bottom: 3em;
+}
+.DataPens {
+    list-style-type: none;
+}
+.icons-wrapper{
+    position: relative;
+    margin-left: 1em;
+}
+.icon{
+    display: inline-block;
+    font-size: 44px;
+    animation: float 3s ease-in-out infinite; 
+}	
+.ri-instagram-line{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* This is the first item so no animation delay needed.*/
+}
+
+.ri-facebook-circle-line{
+    color: #1877f2;
+    animation-delay: 1s; /* Adds a animation delay of 1 seconds.*/
+}
+
+.ri-youtube-line{
+    color: #dd1313;
+    animation-delay: 2s; /* Adds a animation delay of 2 seconds.*/
+}
+
+@keyframes float {
+    0%{
+        transform: translateY(0); 
+    }
+    50%{
+        transform: translateY(-15px); 
+    }
+    100%{
+        transform: translateY(0); 
+    }
+}
+.col-lg-12 {
+    flex:0 0 100%;
+    max-width: 100%;
+    text-align: center;
+}
