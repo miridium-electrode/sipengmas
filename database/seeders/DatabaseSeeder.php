@@ -13,16 +13,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $ps = new ProdiSeeder();
-        $j = new JurusanSeeder();
+        $p = new ProdiSeeder();
+        $d = new DepartemenSeeder();
+        $dp = new DepartemenProdiSeeder();
+        $j = new JenjangSeeder();
         $pers = new PeriodeSeeder();
+        $s = new SkemaSeeder();
         $pes = new PegawaiSeeder();
         $pens = new PengmasSeeder();
         $dps = new DaftarPengmasSeeder();
 
-        $ps->run();
-        $pers->run();
+        $p->run();
+        $d->run();
+        $dp->run();
         $j->run();
+        $pers->run();
+        $s->run();
         $pes->run();
         $pens->run();
         $dps->run();
