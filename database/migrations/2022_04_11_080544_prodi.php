@@ -13,9 +13,9 @@ class Jurusan extends Migration
      */
     public function up()
     {
-        Schema::create('jurusan', function (Blueprint $table) {
+        Schema::create('prodi', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_jurusan');
+            $table->string('nama_prodi');
         });
     }
 
@@ -26,6 +26,6 @@ class Jurusan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jurusan');
+        Schema::dropIfExists('prodi');
     }
 }
