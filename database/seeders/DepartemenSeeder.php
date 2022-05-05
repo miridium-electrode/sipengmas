@@ -18,6 +18,9 @@ class DepartemenSeeder extends Seeder
             [
                 'nama_departemen' => 'Departemen Komputer dan Informatika'
             ],
+            [
+                'nama_departemen' => 'Departemen Elektro'
+            ],
         ]);
     }
 }

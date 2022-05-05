@@ -17,17 +17,21 @@ class PengmasSeeder extends Seeder
         DB::table('pengmas')->insert([
             [
                 'dana' => 15000.00,
-                'prodi_id' => 2,
                 'judul' => "Pengenalan Penggunaan Bluetooth sebagai Media Pembelajaran Jarak Jauh Studi Kasus Belajar Pemrograman Python bagi Siswa SMK di USBJJ Pungging Mojokerto",
+                'prodi_id' => 3,
+                'departemen_id' => 2,
                 'periode_id' => 1,
-                'jurusan_id' => 3,
+                'skema_id' => 1,
+                'jenjang_id' => 2,
             ],
             [
                 'dana' => 15000.00,
-                'prodi_id' => 2,
                 'judul' => "Service Learning in Computer Engineering (Slice) Desa Sedayulawas, Kecamatan Brondong Kabupaten Lamongan",
+                'prodi_id' => 3,
+                'departemen_id' => 2,
                 'periode_id' => 1,
-                'jurusan_id' => 3,
+                'skema_id' => 1,
+                'jenjang_id' => 2,
             ]
         ]);
     }
