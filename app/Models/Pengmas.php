@@ -9,9 +9,9 @@ class Pengmas extends Model
     protected $table = 'pengmas';
     public $timestamps = false;
     
-    public function jurusan()
+    public function jenjang()
     {
-        return $this->belongsTo(Jurusan::class);
+        return $this->belongsTo(Jenjang::class);
     }
 
     public function periode()
@@ -21,6 +21,15 @@ class Pengmas extends Model
 
     public function prodi() {
         return $this->belongsTo(Prodi::class);
+    }
+
+    public function departemen() {
+        return $this->belongsTo(Departemen::class);
+    }
+
+    public function skema()
+    {
+        return $this->belongsTo(Skema::class);
     }
 
     public function ketua() {
