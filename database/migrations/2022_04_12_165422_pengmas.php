@@ -16,14 +16,14 @@ class Pengmas extends Migration
         Schema::create('pengmas', function (Blueprint $table) {
             $table->id();
             $table->string('lampiran', 255)->nullable();
-            $table->string('judul', 255);
+            $table->text('judul');
             $table->decimal('dana');
             $table->foreignId('prodi_id')->constrained('prodi');
             $table->foreignId('departemen_id')->constrained('departemen');
             $table->foreignId('periode_id')->constrained('periode');
             $table->foreignId('skema_id')->constrained('skema');
             $table->foreignId('jenjang_id')->constrained('jenjang');
-
+            $table->fullText('judul');
         });
     }
 
