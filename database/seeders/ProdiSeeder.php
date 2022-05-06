@@ -14,7 +14,7 @@ class ProdiSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('jurusan')->insert([
+        DB::table('prodi')->insert([
             ['nama_prodi' => 'Teknik Informatika'],
             ['nama_prodi' => 'Teknik Komputer'],
             ['nama_prodi' => 'Teknik Elektronika'],
