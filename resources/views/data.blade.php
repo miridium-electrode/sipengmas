@@ -82,9 +82,14 @@
       </div>
     </nav>
   </header>
+
+
   <div class="container-fluid">
     <div class="row g-0">
-      <div id="filter" class="col-sm-3 m-3">
+
+
+      <form id="filter" class="col-sm-3 m-3" method="POST" action="{{ url('/data/filter') }}">
+        @csrf
         <div class="text-dark">
           <h5>Filter Pengmas</h5>
         </div>
@@ -93,42 +98,99 @@
         </div>
         @foreach ($periode as $p)
           <div class="form-check ml-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-            {{ $p->tahun }}
+            <input 
+            class="form-check-input" 
+            name="periode[]" 
+            type="checkbox" 
+            value="{{ $p['id'] }}" 
+            id="flexCheckDefault"
+            {{ $p['checked'] ? "checked" : "" }}>
+            <label class="form-check-label" for="periode[]">
+              {{ $p['tahun'] }}
             </label>
           </div>          
         @endforeach
         <div class="text-dark ml-2 mt-2">
             <h6>Prodi</h6>
         </div>
-        @foreach ($prodi as $p)
+        @foreach ($prodi as $i => $p)
           <div class="form-check ml-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                {{ $p->nama_prodi }}
+            <input 
+            class="form-check-input" 
+            name="prodi[]" 
+            type="checkbox" 
+            value="{{ $p['id'] }}" 
+            id="flexCheckDefault"
+            {{ $p['checked'] ? "checked" : "" }}>
+            <label class="form-check-label" for="prodi[]">
+                {{ $p['nama_prodi'] }}
             </label>
           </div>
         @endforeach
         <div class="text-dark ml-2 mt-2">
-            <h6>Jurusan</h6>
+            <h6>Jenjang</h6>
         </div>
-        @foreach ($jurusan as $j)
+        @foreach ($jenjang as $j)
           <div class="form-check ml-5">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                {{ $j->nama_jurusan }}
+            <input 
+            class="form-check-input" 
+            name="jenjang[]" type="checkbox" 
+            value="{{ $j['id'] }}" 
+            id="flexCheckDefault"
+            {{ $j['checked'] ? 'checked' : '' }}>
+            <label class="form-check-label" for="jenjang[]">
+                {{ $j['nama_jenjang'] }}
             </label>
           </div>
         @endforeach
-      </div>
+        <div class="text-dark ml-2 mt-2">
+          <h6>Skema</h6>
+        </div>
+        @foreach ($skema as $s)
+          <div class="form-check ml-5">
+            <input 
+            class="form-check-input" 
+            name="skema[]" 
+            type="checkbox" 
+            value="{{ $s['id'] }}" 
+            id="flexCheckDefault"
+            {{ $s['checked'] ? 'checked' : '' }}>
+            <label class="form-check-label" for="skema[]">
+                {{ $s['nama_skema'] }}
+            </label>
+          </div>
+        @endforeach
+        <div class="text-dark ml-2 mt-2">
+          <h6>Departemen</h6>
+        </div>
+        @foreach ($departemen as $d)
+          <div class="form-check ml-5">
+            <input 
+            class="form-check-input" 
+            name="departemen[]" 
+            type="checkbox" 
+            value="{{ $d['id'] }}" 
+            id="flexCheckDefault"
+            {{ $d['checked'] ? 'checked' : '' }}>
+            <label class="form-check-label" for="departemen[]">
+                {{ $d['nama_departemen'] }}
+            </label>
+          </div>
+        @endforeach
+        <button class="btn btn-primary" type="submit">
+          Filter Data
+        </button>
+        </form>
+
+
       <div id="content" class="col-sm-8">
-        <div class="input-group mt-3 ml-2 mb-3">
-          <input type="text" class="form-control">
-          <button class="btn btn-outline-dark" type="button">
+        <form class="input-group mt-3 ml-2 mb-3" method="POST" action="{{ url('/data/filter') }}">
+          @csrf
+          <input type="text" class="form-control" name="search">
+          <button class="btn btn-outline-dark" type="submit">
             <i class="bi bi-search"></i>
           </button>
-        </div>
+        </form>
         <button id="filter-toggle" class="btn btn-secondary">
           <i class="bi bi-funnel-fill"></i>
           <span>
@@ -170,6 +232,8 @@
           </table>
         </div>
       </div>
+      
+    
     </div>
   </div>
 </body>

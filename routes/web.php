@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/data', [TampilkanPengmasController::class, 'index']);
+Route::post('/data/filter', [TampilkanPengmasController::class, 'filter']);
