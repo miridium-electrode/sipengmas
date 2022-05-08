@@ -23,6 +23,38 @@ class DepartemenProdiSeeder extends Seeder
                 'departemen_id' => 1,
                 'prodi_id' => 2,
             ],
+            [
+                'departemen_id' => 1,
+                'prodi_id' => 3,
+            ],
+            [
+                'departemen_id' => 2,
+                'prodi_id' => 4,
+            ],
+            [
+                'departemen_id' => 2,
+                'prodi_id' => 5,
+            ],
+            [
+                'departemen_id' => 2,
+                'prodi_id' => 6,
+            ],
+            [
+                'departemen_id' => 3,
+                'prodi_id' => 7,
+            ],
+            [
+                'departemen_id' => 3,
+                'prodi_id' => 8,
+            ],
+            [
+                'departemen_id' => 4,
+                'prodi_id' => 9,
+            ],
+            [
+                'departemen_id' => 4,
+                'prodi_id' => 10,
+            ],
         ]);
     }
 }

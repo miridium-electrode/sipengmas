@@ -16,10 +16,16 @@ class DepartemenSeeder extends Seeder
     {
         DB::table('departemen')->insert([
             [
-                'nama_departemen' => 'Departemen Komputer dan Informatika'
+                'nama_departemen' => 'Departemen Teknik Elektro'
             ],
             [
-                'nama_departemen' => 'Departemen Elektro'
+                'nama_departemen' => 'Departemen Teknik Informatika dan Komputer'
+            ],
+            [
+                'nama_departemen' => 'Departemen Teknik Mekanika dan Energi'
+            ],
+            [
+                'nama_departemen' => 'Departemen Teknologi Multimedia Kreatif'
             ],
         ]);
     }

@@ -16,6 +16,7 @@ class PeriodeSeeder extends Seeder
     {
         DB::table('periode')->insert([
             ['tahun' => '2019'],
+            ['tahun' => '2020'],
         ]);
     }
 }

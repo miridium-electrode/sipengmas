@@ -17,6 +17,7 @@ class JenjangSeeder extends Seeder
         DB::table('jenjang')->insert([
             ['nama_jenjang' => 'D3'],
             ['nama_jenjang' => 'D4'],
+            ['nama_jenjang' => 'S2'],
         ]);
     }
 }

@@ -17,22 +17,49 @@ class PengmasSeeder extends Seeder
         DB::table('pengmas')->insert([
             [
                 'dana' => 15000.00,
-                'judul' => "Pengenalan Penggunaan Bluetooth sebagai Media Pembelajaran Jarak Jauh Studi Kasus Belajar Pemrograman Python bagi Siswa SMK di USBJJ Pungging Mojokerto",
+                'judul' => "Workshop Perancangan dan Pemasangan Panel Surya di Gresik",
                 'prodi_id' => 3,
-                'departemen_id' => 2,
+                'departemen_id' => 1,
                 'periode_id' => 1,
                 'skema_id' => 1,
                 'jenjang_id' => 2,
             ],
             [
                 'dana' => 15000.00,
-                'judul' => "Service Learning in Computer Engineering (Slice) Desa Sedayulawas, Kecamatan Brondong Kabupaten Lamongan",
+                'judul' => "Pelatihan Analisa aliran daya menggunakan ETAP untuk guru SMK Probolinggo",
                 'prodi_id' => 3,
+                'departemen_id' => 1,
+                'periode_id' => 1,
+                'skema_id' => 1,
+                'jenjang_id' => 2,
+            ],
+            [
+                'dana' => 15000.00,
+                'judul' => "pengenalan SMT pada rangkaian elekronika 2 layer pcb untuk meningkatkan daya saing SMK probolinggo",
+                'prodi_id' => 1,
+                'departemen_id' => 1,
+                'periode_id' => 1,
+                'skema_id' => 1,
+                'jenjang_id' => 2,
+            ],
+            [
+                'dana' => 15000.00,
+                'judul' => "pelatihan motion capture studio game untuk komunitas GADAS surabaya",
+                'prodi_id' => 9,
+                'departemen_id' => 4,
+                'periode_id' => 1,
+                'skema_id' => 1,
+                'jenjang_id' => 2,
+            ],
+            [
+                'dana' => 15000.00,
+                'judul' => "pengenalan big blue button untuk pjj smk mojokerto",
+                'prodi_id' => 4,
                 'departemen_id' => 2,
                 'periode_id' => 1,
                 'skema_id' => 1,
                 'jenjang_id' => 2,
-            ]
+            ],
         ]);
     }
 }

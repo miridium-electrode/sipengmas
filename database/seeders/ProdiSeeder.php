@@ -15,12 +15,14 @@ class ProdiSeeder extends Seeder
     public function run()
     {
         DB::table('prodi')->insert([
+            ['nama_prodi' => 'Teknik Elektronika'],
+            ['nama_prodi' => 'Teknik Telekomunikasi'],
+            ['nama_prodi' => 'Teknik Elektro Industri'],
             ['nama_prodi' => 'Teknik Informatika'],
             ['nama_prodi' => 'Teknik Komputer'],
-            ['nama_prodi' => 'Teknik Elektronika'],
-            ['nama_prodi' => 'Teknik Elektro Industri'],
-            ['nama_prodi' => 'Teknik Telekomunikasi'],
+            ['nama_prodi' => 'Sains Data'],
             ['nama_prodi' => 'Sistem Pembangkit Energi'],
+            ['nama_prodi' => 'Teknik Mekatronika'],
             ['nama_prodi' => 'Teknologi Game'],
             ['nama_prodi' => 'Teknologi Multimedia Broadcasting'],
         ]);
