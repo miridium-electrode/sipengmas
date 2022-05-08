@@ -62,7 +62,7 @@
   <header>
     <nav class="navbar navbar-expand-sm sticky-top bg-primary">
       <div class="container-fluid">
-        <a href="#" class="navbar-brand text-white"><span class="text-secondary">SI</span><span>PENGMAS</span></a>
+        <a href="{{ url('/') }}" class="navbar-brand text-white"><span class="text-secondary">SI</span><span>ABDI</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <i class="bi bi-list text-white"></i>
         </button>
