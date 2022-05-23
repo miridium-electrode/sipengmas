@@ -35,7 +35,7 @@
               <ul class="list">
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="{{ url('/data') }}">Data</a></li>
+                <li><a href="{{ url('/login') }}">Login</a></li>
               </ul>
             </div>
           </nav>
