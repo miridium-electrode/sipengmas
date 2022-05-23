@@ -18,5 +18,9 @@ Route::get('/', function () {
     return view('landingpage');
 });
 
+Route::get('/login', function() {
+    return view('login');
+});
+
 Route::get('/data', [TampilkanPengmasController::class, 'index']);
 Route::post('/data/filter', [TampilkanPengmasController::class, 'filter']);
